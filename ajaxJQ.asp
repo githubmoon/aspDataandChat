@@ -22,6 +22,10 @@ End If
                      font-family: 微软雅黑;
                  }
         }
+        td{
+        vertical-align: middle;
+        height:100%;
+        }
     </style>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
@@ -40,7 +44,7 @@ End If
 
     <div class="row">
     <table class="table table-condensed table-responsive table-bordered table-responsive text-center table-hover table-striped">
-     <caption class=" text-center text-success "><h3>Server</h3></caption>
+     <span class=" text-center text-success "><h3>Server</h3></span>
         <thead >
         <tr >
             <th class="text-center">id</th>

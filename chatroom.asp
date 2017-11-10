@@ -22,23 +22,32 @@
 </head>
 <body>
 <div class="container">
-    
-    <div class="row pull-right">
-        <p>There are  onchat now!</p>  <label>欢迎<b><%=session("users")%></b>登陆 chatroom</label> <button id="quits"  class="btn btn-warning" >退出</a>
-    </div>
+
+           <div class="row"><div class="clearfix" style="margin-bottom: 10px;"></div><!-- 清除浮动 --></div>
+
+           <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3"><span>To <label id="tsts"></label></span></div>
+
+                <div class="col-lg-9 col-md-9 col-sm-9 text-right">
+                        <label>欢迎<b style="color:red;"><%=session("users")%></b>登陆 chatroom</label> <button id="quits"  class="btn btn-warning btn-sm" >退出</button>
+                </div>
+        	</div>
+           <div class="row"><div class="clearfix" style="margin-bottom: 10px;"></div><!-- 清除浮动 --></div>
+
+
     
     <div class="row ">
-        <div class="chatlist" style="overflow-y: scroll;width: 26%;height:360px;background: #888;float:left;margin-top:100px;">
+        <div class="chatlist" style="border-radius:13px;overflow-y: scroll;width: 29%;height:360px;background: #888;float:left;margin-top:39px;">
             
         </div>
-		<span>To <label id="tsts"></label></span>
-        <div class="chatcontent" style="overflow-y: scroll;width: 66%;height:360px;border:2px solid #666;margin-left:16px;float:left;margin-top:39px">
+
+        <div class="chatcontent" style="border-radius:13px;overflow-y: scroll;width: 69%;height:360px;border:2px solid #666;margin-left:1px;float:left;margin-top:39px">
             
         </div>
     </div>
     
     <div class="row">
-        <textarea id="texts" style="margin:10px 16px 6px 26px;width:88%" name="" id=""  rows="3"></textarea>  <button type="button" id="add" class="btn btn-success">Send</button>
+        <textarea id="texts" style="outline:none;border-radius:13px;margin:10px 16px 6px 26px;width:88%" name="" id=""  rows="3"></textarea>  <button type="button" id="add" class="center-block btn btn-success">Send</button>
     </div>
     <input id="uersid" type="hidden" value=<%=session("users")%>>
 
@@ -48,7 +57,7 @@
 
 
 		
-		
+		//聊天列表显示判断
 		 function render(){
 		 
 		  $.ajax({
@@ -171,8 +180,8 @@
 		 
 		 };
 		 
-		 
-		  function renderchat(){
+		 //刷新聊天内容
+		function renderchat(){
 		chatwo = setInterval(function () {
 		  $.ajax({
             type:'post',
@@ -187,9 +196,9 @@
 
                       var cbn = data[i].split(',').slice(0,length-1);
 					  if($("#uersid").val() == $("#username").text()){
-					   shoowlist+='<div  class="chatlsr" style="font-size: 20px;text-align: left;color:white;cursor:pointer;background:#9cf;margin-top:2px;">'+cbn[2]+'</div>';
+					   shoowlist+='<div  class="chatlsr" style="padding-left:10px;font-size: 20px;text-align: left; color:#888;cursor:pointer;background:#9cf;margin-top:2px;">'+cbn[2]+'</div>';
 					  }else{
-					   shoowlist+='<div  class="chatls" style="text-align:left;font-size: 20px;color: white;cursor:pointer;background:#9cf;margin-top:2px;">'+cbn[2]+'</div>';
+					   shoowlist+='<div  class="chatls" style="padding-left:10px;text-align:left;font-size: 20px; color:#888;cursor:pointer;background:#9cf;margin-top:2px;">'+cbn[2]+'</div>';
 					  }
                        
                 };
@@ -204,7 +213,7 @@
 		 };
 		 
 		 
-		 
+		 //创建聊天列表
 		tst= setInterval(function () {
 		var usids =true;
             $.ajax({
@@ -239,8 +248,9 @@
         });
 		
 		
-         },800)
-		 		 
+         },800);
+
+		//退出聊天页面
 		 $("#quits").click(function(){	
 		 clearInterval(tst);
 		 
@@ -258,7 +268,8 @@
         });
 		 
 		 });
-		 
+
+		 //选择聊天对象
 		 $(".chatlist").delegate(".chatls","click",function(){
               clearInterval(chatwo);
 			  alltxt = $(this).text();
@@ -278,7 +289,7 @@
 				   qiusei();
             },
             error:function(err){
-                console.log("为创建表");
+              //  console.log("为创建表");
 				
 				 $.ajax({
                  type:'post',
@@ -286,7 +297,7 @@
                  url:'../action/chattwo.asp',
                  success:function(data){
 				    renderchat();
-				    console.log("创建表成功");
+				   // console.log("创建表成功");
 					$("#tsts").text(alltxt);
 					qiusei();
             },
@@ -299,22 +310,19 @@
              });
 			 
          });
+
 		 
-		 $(".chatlist").delegate("div","hover",function(){
-              $(this).css({background:"#cf9"})
-         });
-		 
-		 
-		 $("#add").click(function(){//发送信息
+		 //发送信息
+		 $("#add").click(function(){
 		  if($("#texts").val() == '')return;
 		  var nowtime =new Date();
 		  var mnhm=nowtime.getMonth()+1;
-		 var tyty ='<span style="font-size:12px;color:#666;">'+ nowtime.getFullYear()+"/"+mnhm+"/"+nowtime.getDate()+" "+nowtime.getHours()+":"+nowtime.getMinutes()+":"+nowtime.getSeconds()+"</span>";
+		 var tyty ='<span style="font-size:12px;color:#fff;">'+ nowtime.getFullYear()+"/"+mnhm+"/"+nowtime.getDate()+" "+nowtime.getHours()+":"+nowtime.getMinutes()+":"+nowtime.getSeconds()+"</span>";
 		  console.log(tyty);
         $.ajax({
             type:'post',
             url:'../action/chattwo.asp',
-            data:{qq:'add',texts:'<span  id="username" style="font-size:12px;color:blue;">'+$("#uersid").val()+"</span>: "+ $("#texts").val()+" "+tyty,tabs:chattab},
+            data:{qq:'add',texts:'<span  id="username" style="font-size:16px;color:blue;">'+$("#uersid").val()+"</span> : "+ $("#texts").val()+" "+tyty,tabs:chattab},
             success:function(data){
                 $("#texts").val("");
             },
@@ -323,10 +331,9 @@
             }
         });
 		 });
-		 
-		 
+
+		  //请求添加聊天
 		 function qiusei(){
-		 
 		 rejname = alltxt
 		    $.ajax({
             type:'post',
@@ -334,7 +341,7 @@
             data:{qq:'addinsert',qs:$("#uersid").val(),qt:alltxt},
             success:function(data){
 			 console.log(data);
-              console.log("请求添加");
+             // console.log("请求添加");
             },
             error:function(err){
                 console.log(err);
