@@ -59,17 +59,17 @@ End If
     <br/>
     <div class="row">
 	<div class="text-center">
-        <div class="btn-group">
+        <div class="btn-group" style="width:100%" >
       
-              <button style="width:70px;" type="button" id="add" class="btn btn-success">add</button>
+              <button style="width:20%" type="button" id="add" class="btn btn-success">add</button>
      
-              <button  style="width:70px;" type="button" id="selone" class="btn btn-primary">selone</button>
+              <button  style="width:20%;" type="button" id="selone" class="btn btn-primary">selone</button>
        
-              <button  style="width:70px;" type="button" id="delete" class="btn btn-danger">delete</button>
+              <button  style="width:20%;" type="button" id="delete" class="btn btn-danger">delete</button>
    
-              <button  style="width:70px;" type="button" id="selall" class="btn btn-warning">selall</button>
+              <button  style="width:20%;" type="button" id="selall" class="btn btn-warning">selall</button>
        
-              <button  style="width:70px;" type="button" id="update" class="btn btn-success">update</button>
+              <button  style="width:20%;" type="button" id="update" class="btn btn-success">update</button>
      
        </div>
   </div>
