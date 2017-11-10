@@ -15,22 +15,32 @@ End If
             font-size: 96%;
             font-family: 微软雅黑;
         }
+
+        @media (max-width: 768px) {
+          *{
+                     font-size: 12px;
+                     font-family: 微软雅黑;
+                 }
+        }
     </style>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="row pull-right">
-	<p>There are <%response.write(Application("visitors"))%> online now!</p>  <label>欢迎<b><%=session("users")%></b>登陆</label><a class="btn btn-warning" href="chatroom.asp">ChatRoom</a> <a class="btn btn-warning" href="../../login.asp?tag=quit">退出</a>
-	</div>
-    <div class="row ">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6 text-center text-success "><h3>server</h3></div>
-        <div class="col-lg-3"></div>
-    </div>
+       <div class="row"><div class="clearfix" style="margin-bottom: 10px;"></div><!-- 清除浮动 --></div>
+
+       <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"><p>There are <%response.write(Application("visitors"))%> online now!</p> </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9 text-right">
+               <label>欢迎<b><%=session("users")%></b>登陆</label>  <a class="btn btn-warning btn-sm" href="chatroom.asp">ChatRoom</a> <a class="btn btn-warning btn-sm" href="../../login.asp?tag=quit">退出</a>
+            </div>
+    	</div>
+
     <div class="row">
     <table class="table table-condensed table-responsive table-bordered table-responsive text-center table-hover table-striped">
+     <caption class=" text-center text-success "><h3>Server</h3></caption>
         <thead >
         <tr >
             <th class="text-center">id</th>
@@ -44,19 +54,24 @@ End If
     </table>
     </div>
 
-    <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
-            <input id="di" class="input-sm" placeholder="id"/>
-            <input id="task" class="input-sm" placeholder="task"/>
-            <input id="time" type="date" class="input-sm" placeholder="time"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="notes" class="input-sm" placeholder="notes"/>
-			<input id="upname" class="input-sm" placeholder="upname"/>
-			<input id="upvalue" class="input-sm" placeholder="upvalue"/>
-        </div>
-        <div class="col-lg-2"></div>
+   <div class="row ">
+        <div class="text-center">
+            <div class="input-group" style="width:100%" >
+            <input style="width:16%"  id="di" class="input-sm" placeholder="id"/>
+            <input style="width:16%"  id="task" class="input-sm" placeholder="task"/>
+            <input style="width:16%"  id="time" type="date" class="input-sm" placeholder="time"/>
+            <input style="width:16%"  id="notes" class="input-sm" placeholder="notes"/>
+			<input style="width:16%"  id="upname" class="input-sm" placeholder="upname"/>
+			<input style="width:16%"  id="upvalue" class="input-sm" placeholder="upvalue"/>
+            </div>
+            </div>
     </div>
-    <br/>
+
+    <div class="row">
+    <div class="clearfix" style="margin-bottom: 10px;"></div><!-- 清除浮动 -->
+    </div>
+
+
     <div class="row">
 	<div class="text-center">
         <div class="btn-group" style="width:100%" >
