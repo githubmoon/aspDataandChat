@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+   
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    <div class="mycenter">
+        <div class="mysign">
+            <div class="col-lg-11 text-center text-info">
+                <h2>请登录</h2>
+            </div>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" name="username" placeholder="请输入账户名" required autofocus/>
+            </div>
+            <div class="col-lg-10"></div>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" name="password" placeholder="请输入密码" required autofocus/>
+            </div>
+            <div class="col-lg-10"></div>
+            <!--<div class="col-lg-10 mycheckbox checkbox">-->
+               <!--&lt;!&ndash;<input type="checkbox" class="col-lg-1">记住密码</input>&ndash;&gt;-->
+            <!--</div>-->
+            <div class="col-lg-10"></div>
+            <div class="col-lg-10">
+                <button id="btn" type="button" class="btn btn-success col-lg-12 btn-block">登录</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $("#btn").click(function(){
+        window.location.href = "public/htm/ajaxJQ.html"
+    });
+</script>
+</body>
+</html>

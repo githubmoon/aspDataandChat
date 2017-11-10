@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showCustomer(str)
+{
+if (str=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// 针对 IE7+, Firefox, Chrome, Opera, Safari 的代码
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// 针对 IE6, IE5 的代码
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getcustomer.asp?q="+str,true);
+xmlhttp.send();
+}
+</script>
+</head
+<body>
+
+<form>
+<select name="customers" onchange="showCustomer(this.value)">
+<option value="">Select a customer:</option>
+<option value="ALFKI">Alfreds Futterkiste</option>
+<option value="NORTS ">North/South</option>
+<option value="WOLZA">Wolski Zajazd</option>
+</select>
+</form>
+<br>
+<div id="txtHint">客户信息将在此处列出...</div>
+
+</body>
+</html>

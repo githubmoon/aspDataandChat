@@ -1,0 +1,24 @@
+request.form('qq'); 获取post请求值
+request.QueryString("qq")获取GET请求值
+
+if判断语句
+
+Dim myNum:myNum = 10
+If request.form("qq") = "add" Then
+   Response.Write("大于10")
+ElseIf myNum < 10 Then
+   Response.Write("等于10")
+Else
+    response.expires=-1
+sql="SELECT * FROM guest.ts"
+set conn=Server.CreateObject("ADODB.Connection")
+conn.Open "driver={SQL Server};server=ms4932640.xincache1.cn;uid=ms4932640;pwd=z5J7a9r8;database=ms4932640"
+set rs=Server.CreateObject("ADODB.recordset")
+rs.open"select * from guest.ts" ,conn 
+    do While not rs.eof     
+    Response.write(rs(0)&","&rs(1)&","&rs(2)&","&rs(3)&",<br/>spt")     
+    rs.MoveNext     
+Loop    
+rs.close()     
+Conn.close() 
+End If
