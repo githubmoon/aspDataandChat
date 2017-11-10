@@ -29,7 +29,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3"><span>To <label id="tsts"></label></span></div>
 
                 <div class="col-lg-9 col-md-9 col-sm-9 text-right">
-                        <label>欢迎<b style="color:red;"><%=session("users")%></b>登陆 chatroom</label> <button id="quits"  class="btn btn-warning btn-sm" >退出</button>
+                        <label>欢迎 <b style="color:red;"><%=session("users")%></b> 登陆 chatroom</label> <button id="quits"  class="btn btn-warning btn-sm" >退出</button>
                 </div>
         	</div>
     

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e9fb917-e83b-462e-b663-acf3f89e6942" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxJQ.asp" afterPath="$PROJECT_DIR$/ajaxJQ.asp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatroom.asp" afterPath="$PROJECT_DIR$/chatroom.asp" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="ajaxJQ.asp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajaxJQ.asp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="475">
+              <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -45,21 +46,21 @@
       <file leaf-file-name="chatroom.asp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatroom.asp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="418">
+              <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#label#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1950#5142#0#HTML" expanded="false" />
-                <marker date="1510298523285" expanded="true" signature="2366:2457" ph="..." />
-                <marker date="1510298523285" expanded="true" signature="2540:2634" ph="..." />
-                <marker date="1510298523285" expanded="true" signature="5669:5778" ph="..." />
-                <marker date="1510298523285" expanded="true" signature="5861:5969" ph="..." />
-                <marker date="1510298523285" expanded="true" signature="8824:8850" ph="..." />
-                <marker date="1510298523285" expanded="true" signature="9160:9186" ph="..." />
+                <element signature="e#1952#5144#0#HTML" expanded="false" />
+                <marker date="1510299321029" expanded="true" signature="2368:2459" ph="..." />
+                <marker date="1510299321029" expanded="true" signature="2542:2636" ph="..." />
+                <marker date="1510299321029" expanded="true" signature="5671:5780" ph="..." />
+                <marker date="1510299321029" expanded="true" signature="5863:5971" ph="..." />
+                <marker date="1510299321029" expanded="true" signature="8826:8852" ph="..." />
+                <marker date="1510299321029" expanded="true" signature="9162:9188" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,8 +89,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ajaxJQ.asp" />
         <option value="$PROJECT_DIR$/ajaxJQ.html" />
+        <option value="$PROJECT_DIR$/ajaxJQ.asp" />
         <option value="$PROJECT_DIR$/chatroom.asp" />
       </list>
     </option>
@@ -100,7 +101,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="315" />
     <option name="y" value="23" />
     <option name="width" value="1382" />
@@ -129,11 +130,6 @@
             <path>
               <item name="aspDataandChat" type="b2602c69:ProjectViewProjectNode" />
               <item name="aspDataandChat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aspDataandChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aspDataandChat" type="462c0819:PsiDirectoryNode" />
-              <item name="others" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -168,15 +164,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510282067673</updated>
-      <workItem from="1510283096932" duration="7373000" />
+      <workItem from="1510283096932" duration="8171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7373000" />
+    <option name="totallyTimeSpent" value="8171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -208,6 +204,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ajaxJQ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -218,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ajaxJQ.asp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="42" selection-end-column="14" />
+        <state relative-caret-position="475">
+          <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -240,31 +244,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajaxJQ.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatroom.asp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="418">
+          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#0;n#label#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1950#5142#0#HTML" expanded="false" />
-            <marker date="1510298523285" expanded="true" signature="2366:2457" ph="..." />
-            <marker date="1510298523285" expanded="true" signature="2540:2634" ph="..." />
-            <marker date="1510298523285" expanded="true" signature="5669:5778" ph="..." />
-            <marker date="1510298523285" expanded="true" signature="5861:5969" ph="..." />
-            <marker date="1510298523285" expanded="true" signature="8824:8850" ph="..." />
-            <marker date="1510298523285" expanded="true" signature="9160:9186" ph="..." />
+            <element signature="e#1952#5144#0#HTML" expanded="false" />
+            <marker date="1510299321029" expanded="true" signature="2368:2459" ph="..." />
+            <marker date="1510299321029" expanded="true" signature="2542:2636" ph="..." />
+            <marker date="1510299321029" expanded="true" signature="5671:5780" ph="..." />
+            <marker date="1510299321029" expanded="true" signature="5863:5971" ph="..." />
+            <marker date="1510299321029" expanded="true" signature="8826:8852" ph="..." />
+            <marker date="1510299321029" expanded="true" signature="9162:9188" ph="..." />
           </folding>
         </state>
       </provider>

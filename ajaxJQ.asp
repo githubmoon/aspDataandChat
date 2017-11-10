@@ -38,7 +38,7 @@ End If
             <div class="col-lg-3 col-md-3 col-sm-3"><p>There are <%response.write(Application("visitors"))%> online now!</p> </div>
 
             <div class="col-lg-9 col-md-9 col-sm-9 text-right">
-               <label>欢迎<b><%=session("users")%></b>登陆</label>  <a class="btn btn-warning btn-sm" href="chatroom.asp">ChatRoom</a> <a class="btn btn-warning btn-sm" href="../../login.asp?tag=quit">退出</a>
+               <label>欢迎 <b class="text-success"><%=session("users")%></b> 登陆 </label>  <a class="btn btn-warning btn-sm" href="chatroom.asp">ChatRoom</a> <a class="btn btn-warning btn-sm" href="../../login.asp?tag=quit">退出</a>
             </div>
     	</div>
 
