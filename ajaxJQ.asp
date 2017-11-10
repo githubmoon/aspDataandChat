@@ -44,7 +44,7 @@ End If
 
     <div class="row">
     <table class="table table-condensed table-responsive table-bordered table-responsive text-center table-hover table-striped">
-     <span class=" text-center text-success "><h3>Server</h3></span>
+     <span class=" text-center text-success "><h4>Server</h4></span>
         <thead >
         <tr >
             <th class="text-center">id</th>
@@ -57,6 +57,23 @@ End If
         </tbody>
     </table>
     </div>
+
+   <div class="row text-center">
+     <div class="col-sm-9">
+     <span style="margin-left: -7%;">
+     <a href="javascript:void(0);">上一页</a> &nbsp; &nbsp;<label for="" style="font-size: 12px">当前第 <b>5</b> 页</label>&nbsp; &nbsp; <a href="javascript:void(0);">下一页</a>
+     </span>
+     <span style="margin-left: 16%;">
+     <label  for="">总共 <b id="allage">13</b> 页</label>
+     </span>
+    </div>
+
+    <div class="col-sm-3">
+
+      <button id="ints" style="outline: none;" class="btn btn-primary btn-sm">跳转</button> <input id="ipus" type="text" style="width: 26px;border-radius: 6px;outline: none;"> <label for="">页</label>
+     </div>
+    </div>
+
 
    <div class="row ">
         <div class="text-center">
@@ -93,12 +110,13 @@ End If
        </div>
   </div>
 
-   </div
+   </div>
 	
  </div>	
 <script>
-    var  ida,timea,taska,notea;
+    var  ida,timea,taska,notea,allData=[],nowPage = 0;
 
+    //添加数据
     $('#add').click(function(){
         ida =$('#di').val();
         timea =$('#time').val();
@@ -118,6 +136,7 @@ End If
         });
     });
 
+    //查询一条数据
     $('#selone').click(function(){
         ida =$('#di').val();
         if(ida == '')return;
@@ -125,29 +144,35 @@ End If
             type:'post',
             url:'../action/getcustomer.asp',
 			data:{qq:'selone',id:ida},
-            success:function(data){console.log(data);
-                  var htmlStr;
+            success:function(data){//console.log(data);
+            allData = [];
+
                 data = data.split('spt').slice(0,length-1);
 
                 for(var i=0;i<data.length;i++){
-                    var ss="";
+
 
                     var cbn = data[i].split(',').slice(0,length-1);
 
-                    for(var m=0;m<cbn.length;m++){
-                        ss+='<td>'+cbn[m]+'</td>';
-                    }
-                    console.log(ss);
+                     allData.push(cbn);
 
-                    htmlStr+='<tr>'+ss+'</tr>';
+//                    for(var m=0;m<cbn.length;m++){
+//                        ss+='<td>'+cbn[m]+'</td>';
+//                    }
+//                    console.log(ss);
+//
+//                    htmlStr+='<tr>'+ss+'</tr>';
                 }
-                $("#show").html(htmlStr);
+               // $("#show").html(htmlStr);
+               fenye(allData);
             },
             error:function(err){
                 console.log(err);
             }
         });
     });
+
+    //更新数据
    $('#update').click(function(){
         ida =$('#di').val();
 		upname =$('#upname').val();
@@ -173,6 +198,8 @@ End If
             }
         });
     });
+
+   //删除一条数据
     $('#delete').click(function(){
         ida =$('#di').val();
         if(ida == '')return;
@@ -189,6 +216,7 @@ End If
         });
     });
 
+    //查询全部数据
     $('#selall').click(function(){
        render()
     });
@@ -198,27 +226,30 @@ End If
             url:'../action/getcustomer.asp',
 			data:{qq:'cc'},
             success:function(data){
-			   var htmlStr;
+                allData =[];
                 data = data.split('spt').slice(0,length-1);
 
                 for(var i=0;i<data.length;i++){
-                    var ss="";
+
 
                     var cbn = data[i].split(',').slice(0,length-1);
 
-                    for(var m=0;m<cbn.length;m++){
-					if(cbn[m].length >10){
-					 ss+='<td>'+cbn[m].slice(0,10)+'....</td>';
-					}else{
-					 ss+='<td>'+cbn[m].slice(0,10)+'</td>';
-					}
-                       
-                    }
-                    console.log(ss);
+                    allData.push(cbn);
 
-                    htmlStr+='<tr>'+ss+'</tr>';
+//                    for(var m=0;m<cbn.length;m++){
+//					if(cbn[m].length >10){
+//					 ss+='<td>'+cbn[m].slice(0,10)+'....</td>';
+//					}else{
+//					 ss+='<td>'+cbn[m].slice(0,10)+'</td>';
+//					}
+//
+//                    }
+//                    console.log(ss);
+//
+//                    htmlStr+='<tr>'+ss+'</tr>';
                 }
-                $("#show").html(htmlStr);
+                //$("#show").html(htmlStr);
+                fenye(allData);
             },
             error:function(err){
                 console.log(err);
@@ -226,6 +257,51 @@ End If
         });
     };
     render();
+
+    function fenye(data){
+        var allPage = Math.ceil(data.length/7),htmlStr,ppst;
+
+        if((nowPage+1)*6 > data.length){
+            ppst = (data.length)%6;
+
+        }else{
+            ppst = 6;
+        }
+         console.log(ppst);
+        for(var i=0;i<ppst;i++){
+               var showcontent = data[nowPage*6+i],ss="";
+
+            for(var m=0;m<showcontent.length;m++){
+                if(showcontent[m].length >10){
+                				 ss+='<td>'+showcontent[m].slice(0,10)+'....</td>';
+                				}else{
+                				 ss+='<td>'+showcontent[m].slice(0,10)+'</td>';
+                				}
+            }
+                console.log(ss);
+
+                htmlStr+='<tr>'+ss+'</tr>';
+        }
+
+        $("#show").html(htmlStr);
+
+      $("#allage").text(allPage);
+
+
+        console.log(data);
+    };
+
+    $("#ints").click(function(){
+        var tts = parseInt($("#ipus").val());
+        console.log(tts);
+        nowPage = tts-1;
+        console.log(nowPage);
+        fenye(allData);
+
+
+    });
+
+
 </script>
 </body>
 </html>
