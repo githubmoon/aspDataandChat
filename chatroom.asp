@@ -32,9 +32,6 @@
                         <label>欢迎<b style="color:red;"><%=session("users")%></b>登陆 chatroom</label> <button id="quits"  class="btn btn-warning btn-sm" >退出</button>
                 </div>
         	</div>
-           <div class="row"><div class="clearfix" style="margin-bottom: 10px;"></div><!-- 清除浮动 --></div>
-
-
     
     <div class="row ">
         <div class="chatlist" style="border-radius:13px;overflow-y: scroll;width: 29%;height:360px;background: #888;float:left;margin-top:39px;">
