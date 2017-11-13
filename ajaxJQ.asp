@@ -61,7 +61,7 @@ End If
    <div class="row text-center">
      <div class="col-sm-9">
      <span style="margin-left: -7%;">
-     <a href="javascript:void(0);">上一页</a> &nbsp; &nbsp;<label for="" style="font-size: 12px">当前第 <b>5</b> 页</label>&nbsp; &nbsp; <a href="javascript:void(0);">下一页</a>
+     <a id="last" href="javascript:void(0);">上一页</a> &nbsp; &nbsp;<label for="" style="font-size: 12px">当前第 <b id="dq">5</b> 页</label>&nbsp; &nbsp; <a id="next" href="javascript:void(0);">下一页</a>
      </span>
      <span style="margin-left: 16%;">
      <label  for="">总共 <b id="allage">13</b> 页</label>
@@ -114,7 +114,7 @@ End If
 	
  </div>	
 <script>
-    var  ida,timea,taska,notea,allData=[],nowPage = 0;
+    var  ida,timea,taska,notea,allData=[],nowPage = 0,setone=true,allPages,lines=6;
 
     //添加数据
     $('#add').click(function(){
@@ -128,7 +128,8 @@ End If
             url:'../action/getcustomer.asp',
             data:{qq:'add',id:ida,task:taska,times:timea,notes:notea},
             success:function(data){
-                console.log(data);
+               // console.log(data);
+                 render();
             },
             error:function(err){
                 console.log(err);
@@ -138,6 +139,8 @@ End If
 
     //查询一条数据
     $('#selone').click(function(){
+        setone=false;
+        nowPage = 0
         ida =$('#di').val();
         if(ida == '')return;
        $.ajax({
@@ -191,7 +194,8 @@ End If
             url:'../action/getcustomer.asp',
             data:{qq:'update',id:ida,upnames:upname,upvalues:upvalue},
             success:function(data){
-                console.log(data);
+               // console.log(data);
+                render();
             },
             error:function(err){
                 console.log(err);
@@ -208,7 +212,8 @@ End If
             url:'../action/getcustomer.asp',
             data:{qq:'delete',id:ida},
             success:function(data){
-                console.log(data);
+                //console.log(data);
+                render();
             },
             error:function(err){
                 console.log(err);
@@ -218,8 +223,10 @@ End If
 
     //查询全部数据
     $('#selall').click(function(){
+        nowPage = 0;
        render()
     });
+
     function render(){
         $.ajax({
             type:'post',
@@ -230,7 +237,6 @@ End If
                 data = data.split('spt').slice(0,length-1);
 
                 for(var i=0;i<data.length;i++){
-
 
                     var cbn = data[i].split(',').slice(0,length-1);
 
@@ -256,52 +262,66 @@ End If
             }
         });
     };
+
+    //显示内容方法
     render();
 
+    //分页方法
     function fenye(data){
-        var allPage = Math.ceil(data.length/7),htmlStr,ppst;
-
-        if((nowPage+1)*6 > data.length){
-            ppst = (data.length)%6;
+        var allPage = Math.ceil(data.length/lines),htmlStr,ppst;
+         allPages = allPage;
+        if((nowPage+1)*lines > data.length){
+            ppst = (data.length)%lines;
 
         }else{
-            ppst = 6;
+            ppst = lines;
         }
-         console.log(ppst);
+
         for(var i=0;i<ppst;i++){
-               var showcontent = data[nowPage*6+i],ss="";
+               var showcontent = data[nowPage*lines+i],ss="";
 
             for(var m=0;m<showcontent.length;m++){
-                if(showcontent[m].length >10){
-                				 ss+='<td>'+showcontent[m].slice(0,10)+'....</td>';
+                if((showcontent[m].length >10)&&setone){
+                				 ss+='<td>'+showcontent[m].slice(0,9)+'....</td>';
                 				}else{
-                				 ss+='<td>'+showcontent[m].slice(0,10)+'</td>';
+                				 ss+='<td>'+showcontent[m]+'</td>';
                 				}
             }
-                console.log(ss);
+            setone=true;//查询单条信息，展示全部内容。
 
-                htmlStr+='<tr>'+ss+'</tr>';
+            htmlStr+='<tr>'+ss+'</tr>';
         }
 
         $("#show").html(htmlStr);
 
-      $("#allage").text(allPage);
+        $("#allage").text(allPage);
 
-
-        console.log(data);
+        $("#dq").text(parseInt(nowPage)+1);
     };
 
+    //跳转页面
     $("#ints").click(function(){
         var tts = parseInt($("#ipus").val());
-        console.log(tts);
+        if((tts>allPages)||(allPages<0)||($("#ipus").val() === "")){return;}
         nowPage = tts-1;
-        console.log(nowPage);
         fenye(allData);
+    });
 
+    //上一页
+    $("#last").click(function(){
+        if((nowPage<0)||(nowPage ===0)){return;}
+        nowPage--;
+        fenye(allData);
 
     });
 
+     //下一页
+    $("#next").click(function(){
+            if((nowPage===allPages-1)||(nowPage>allPages-1)){return;}
+            nowPage++;
+            fenye(allData);
 
+     });
 </script>
 </body>
 </html>
