@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e9fb917-e83b-462e-b663-acf3f89e6942" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxJQ.asp" afterPath="$PROJECT_DIR$/ajaxJQ.asp" />
-    </list>
+    <list default="true" id="3e9fb917-e83b-462e-b663-acf3f89e6942" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -150,12 +147,12 @@
       <updated>1510282067673</updated>
       <workItem from="1510283096932" duration="14926000" />
       <workItem from="1510533155653" duration="7830000" />
-      <workItem from="1510542756394" duration="1006000" />
+      <workItem from="1510542756394" duration="1602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23762000" />
+    <option name="totallyTimeSpent" value="24358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
